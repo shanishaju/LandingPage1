@@ -29,18 +29,35 @@
                 <span class="text-light fs-2"> Dash Board</span>
               </a>
             <div>
-                <span class="text-light fs-4 me-2"><i class="fa-solid fa-power-off me-2"></i>Logout</span>
+                <span class="text-light fs-4 me-2" onclick="logout()"><i class="fa-solid fa-power-off me-2"></i>Logout</span>
             </div>
             </div>
 
           </nav>
     </header>
     <div>
-        <h1 class="mt-5 text-center">Welcome <span class="text-danger">user</span></h1>
+        <h1 class="mt-5 text-center">Welcome <span class="text-danger" id="username"> </span></h1>
         <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis labore tenetur dignissimos magnam ut eaque nobis corporis obcaecati eum ex sed ipsam error minima expedita sint consequatur, culpa dolor pariatur.
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi doloremque officiis consequuntur iure libero animi obcaecati, beatae eum nemo, eius temporibus odit totam est. Illum expedita voluptatum magnam cum et! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, ea! Minima dolore distinctio culpa, necessitatibus praesentium adipisci at voluptate nesciunt nam sint iure vitae saepe eius? Qui libero recusandae consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi officia aut nemo natus cupiditate ullam, sint corporis omnis delectus ex mollitia quas. Ipsam saepe, optio tenetur laudantium eligendi dolorem. Quisquam.
         </p>
 
     </div>
 </body>
+<script>
+
+  //to diplay the name that user type (use innerHTML )
+  let user = localStorage.getItem("user")
+  // console.log(user);
+  //
+  if(!user){
+    window.location='Login.html'
+  }
+  else{
+  username.innerHTML = user
+}
+  function logout(){
+    localStorage.removeItem("user")
+    window.location = "Login.html"
+  }
+</script>
 </html>
