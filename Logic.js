@@ -4,9 +4,7 @@ class Landing{
     database={ //object datatype
         Sanu:{username:'Sanu',password:'pass'},
         Shani:{username:'Shani',password:'pass'},
-        Sana:{username:'Sana',password:'pass'}
-
-        
+        Sana:{username:'Sana',password:'pass'}   
     }
     //method to store data to local storage.
     savedData(){
@@ -58,7 +56,7 @@ class Landing{
                 if(this.database[user1].password == pswd1){
                     alert(" login successfully")
                     //storing user name in to storage
-                    localStorage.setItem("user2",user1)
+                    localStorage.setItem("user",user1)
                     //navigate to home
                     window.location = 'Home.html'
                 }
@@ -78,5 +76,5 @@ class Landing{
 
 //create object 
 const obj= new Landing
-
-// obj.getData()
+obj.savedData()
+obj.getData()
