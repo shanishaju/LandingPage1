@@ -48,6 +48,28 @@ class Landing{
         let pswd1 = LogPswd.value
         console.log(user1,pswd1);
 
+        this.getData()
+
+        if(user1=="" || pswd1==""){
+            alert("please fill the form completly")
+        }
+        else{
+            if(user1 in this.database){
+                if(this.database[user1].password == pswd1){
+                    alert(" login successfully")
+                    //storing user name in to storage
+                    localStorage.setItem("user2",user1)
+                    //navigate to home
+                    window.location = 'Home.html'
+                }
+                else{
+                    alert("please check username or password")
+                }
+            }
+            else{
+                alert("account dosent exist")
+            }
+        } 
     }
 
 
@@ -57,4 +79,4 @@ class Landing{
 //create object 
 const obj= new Landing
 
-obj.getData()
+// obj.getData()
